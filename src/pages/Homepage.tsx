@@ -1,7 +1,6 @@
 import { useScrollReveal } from "./landing/components/useScrollReveal";
 import Navbar from "./landing/components/Navbar";
 import Hero from "./landing/components/Hero";
-import LogoWall from "./landing/components/LogoWall";
 import About from "./landing/components/About";
 import HowItWorks from "./landing/components/HowItWorks";
 import TimerShowcase from "./landing/components/TimerShowcase";
@@ -24,10 +23,7 @@ export default function TaskManagementLanding() {
     <div className="box-border m-0 p-0 font-inter text-ink bg-white antialiased overflow-x-hidden" ref={rootRef}>
       <SmoothScroll>
         <Navbar />
-        <Hero />
-        
-       {/* <LogoWall />*/}
-       
+        <Hero />       
         <About />
         <HowItWorks />
         <TimerShowcase />

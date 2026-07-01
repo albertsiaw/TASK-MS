@@ -33,7 +33,7 @@ export default function Hero() {
               style={{ transform: "translateX(10%) translateY(5%) rotate(-6deg)" }}
             />
             <div className="absolute top-5 left-5 z-10">
-              <span className="text-[11px] font-bold text-forest-950 block">Mobile App</span>
+              <span className="text-[11px] font-bold text-forest-950 block"></span>
               <span className="text-[10px] text-forest-800 opacity-70">Clock in anywhere</span>
             </div>
           </div>

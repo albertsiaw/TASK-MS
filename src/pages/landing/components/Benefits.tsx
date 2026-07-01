@@ -46,7 +46,7 @@ export default function Benefits() {
       <section className="py-14 sm:py-20 bg-[#f7f9f7] border-t border-cdc-border overflow-hidden">
         <div className="max-w-[1180px] mx-auto px-[18px] md:px-6 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-16 items-center">
           <div className="order-2 lg:order-1">
-            <span className="text-[10.5px] font-bold tracking-[0.12em] uppercase text-forest-700 block mb-3">DASHBOARD</span>
+            
             <h2 className="text-[clamp(1.5rem,2.8vw,2.1rem)] font-semibold text-forest-950 tracking-[-0.01em] leading-[1.2] mb-4">Your entire workforce,<br />visible at a glance</h2>
             <p className="text-[13px] text-muted leading-[1.7] mb-6 max-w-[420px]">The ATTENDX dashboard centralises attendance records, leave requests, overtime logs, and task statuses into one clean, real-time view — so managers spend less time chasing and more time leading.</p>
             <ul className="flex flex-col gap-3">
@@ -73,7 +73,7 @@ export default function Benefits() {
             <img
               src={dashboardDesignPng}
               alt="ATTENDX Dashboard UI"
-              className="w-full max-w-[600px] h-auto object-contain"
+              className="w-full max-w-[800px] h-auto object-contain"
             />
           </div>
         </div>
