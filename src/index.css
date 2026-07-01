@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,400;1,500&family=Baloo+2:wght@600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-forest-950: #0b291b;
+  --color-forest-900: #0f2e20;
+  --color-forest-850: #113526;
+  --color-forest-800: #133a2b;
+  --color-forest-700: #1b4e3a;
+  --color-tan: #f0eadd;
+  --color-tan-ink: #605a4e;
+  --color-mist: #f4f7f5;
+  --color-ink: #101914;
+  --color-muted: #6f6f6c;
+  --color-muted-lt: #a3a39d;
+  --color-cdc-border: #efefec;
+  --color-amber: #f5a524;
+
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+  --font-baloo: 'Baloo 2', sans-serif;
+
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 760px;
+  --breakpoint-lg: 980px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
