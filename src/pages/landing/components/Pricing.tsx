@@ -103,7 +103,6 @@ export default function Pricing() {
     <section className="py-20 lg:py-28 bg-[#f9faf9] border-t border-cdc-border" id="pricing">
       <div className="max-w-[1180px] mx-auto px-[18px] md:px-6">
         <div className="max-w-[600px] mx-auto mb-14 text-center">
-          <span className="text-[11px] font-bold tracking-[0.15em] uppercase text-forest-700 block mb-3">PRICING</span>
           <h2 className="text-[clamp(1.8rem,3vw,2.4rem)] font-semibold text-forest-950 tracking-[-0.02em] mb-4">Simple plans that scale with your team</h2>
           <p className="text-[14px] sm:text-[15px] text-muted leading-[1.65]">Start free for 14 days. No credit card required, cancel anytime.</p>
           <div className="inline-flex items-center gap-1.5 bg-white border border-[#eaeaea] rounded-full p-1.5 mt-8 shadow-sm">

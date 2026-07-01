@@ -12,7 +12,6 @@ export default function FAQ() {
   return (
     <section className="py-14 max-w-[1180px] mx-auto px-[18px] md:px-6 grid grid-cols-1 md:grid-cols-[4fr_8fr] gap-6 md:gap-[46px]">
       <div>
-        <span className="text-[10.5px] font-bold tracking-[0.12em] uppercase text-muted-lt block mb-2.5">FAQ</span>
         <h2 className="text-[clamp(1.45rem,2.5vw,1.9rem)] font-semibold text-forest-900 tracking-[-0.01em]">Frequently asked questions</h2>
       </div>
 

@@ -5,7 +5,6 @@ export default function Hero() {
     <header className="py-7 md:py-8 lg:pb-14">
       <div className="max-w-[1180px] mx-auto px-[18px] md:px-6 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 items-center">
         <div className="flex flex-col justify-center order-1 lg:order-none">
-          <span className="text-[10.5px] font-bold tracking-[0.12em] uppercase text-forest-700 block mb-3">TRY IT NOW!</span>
           <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-forest-950 mb-6">
             Change the way<br />
             you manage<br />
@@ -29,8 +28,8 @@ export default function Hero() {
             <img
               src={phonePng}
               alt="ATTENDX mobile app"
-              className="absolute bottom-0 right-0 h-[115%] w-auto object-contain drop-shadow-2xl"
-              style={{ transform: "translateX(10%) translateY(5%) rotate(-6deg)" }}
+              className="absolute bottom-0 right-0 h-[140%] max-w-none w-auto object-contain drop-shadow-2xl"
+              style={{ transform: "translateX(12%) translateY(18%) rotate(-6deg)" }}
             />
             <div className="absolute top-5 left-5 z-10">
               <span className="text-[11px] font-bold text-forest-950 block"></span>

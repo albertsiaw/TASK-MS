@@ -21,9 +21,10 @@ export default function TaskManagementLanding() {
 
   return (
     <div className="box-border m-0 p-0 font-inter text-ink bg-white antialiased overflow-x-hidden" ref={rootRef}>
+      <Navbar />
       <SmoothScroll>
-        <Navbar />
-        <Hero />       
+        <div className="pt-[76px]">
+          <Hero />       
         <About />
         <HowItWorks />
         <TimerShowcase />
@@ -34,6 +35,7 @@ export default function TaskManagementLanding() {
         <FAQ />
         <CTA />
         <Footer />
+        </div>
       </SmoothScroll>
     </div>
   );

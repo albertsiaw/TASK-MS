@@ -15,7 +15,6 @@ export default function Footer() {
 
       {/* Newsletter section — compact on mobile */}
       <section className="py-10 sm:py-14 px-4 sm:px-6 text-center relative">
-        <span className="text-[10.5px] font-bold tracking-[0.12em] uppercase text-[#8fd6ac] block mb-2.5">STAY IN THE LOOP</span>
         <h2 className="font-baloo font-bold tracking-[0.02em] text-[clamp(1.8rem,5vw,3.2rem)] text-white uppercase leading-none mb-3">Newsletter</h2>
         <p className="text-[#eaf3ee] font-semibold text-[12.5px] leading-[1.6] max-w-[520px] mx-auto mb-0.5">ATTENDX also has a newsletter!</p>
         <p className="text-[12px] text-[#c3d3c9] leading-[1.6] max-w-[520px] mx-auto hidden sm:block">On the agenda: product tips and workforce-management advice delivered to your inbox every week.</p>
@@ -27,7 +26,6 @@ export default function Footer() {
         <p className="text-[10px] text-[#8fa79b] mt-2">By signing up, you agree to our privacy policy.</p>
       </section>
 
-      {/* Footer links — collapse to 2 cols on mobile */}
       <section className="pb-10 sm:pb-14 px-4 sm:px-6 relative">
         <div className="max-w-[1180px] mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-[1fr_1fr_1fr_1.3fr] gap-y-7 gap-x-5 md:gap-7">
           <div>
