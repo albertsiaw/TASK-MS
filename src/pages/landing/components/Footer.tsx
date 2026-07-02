@@ -16,7 +16,7 @@ export default function Footer() {
       {/* Newsletter section — compact on mobile */}
       <section className="py-10 sm:py-14 px-4 sm:px-6 text-center relative">
         <h2 className="font-baloo font-bold tracking-[0.02em] text-[clamp(1.8rem,5vw,3.2rem)] text-white uppercase leading-none mb-3">Newsletter</h2>
-        <p className="text-[#eaf3ee] font-semibold text-[12.5px] leading-[1.6] max-w-[520px] mx-auto mb-0.5">ATTENDX also has a newsletter!</p>
+        <p className="text-[#eaf3ee] font-semibold text-[12.5px] leading-[1.6] max-w-[520px] mx-auto mb-0.5">ATTENDEX also has a newsletter!</p>
         <p className="text-[12px] text-[#c3d3c9] leading-[1.6] max-w-[520px] mx-auto hidden sm:block">On the agenda: product tips and workforce-management advice delivered to your inbox every week.</p>
         <div className="text-[12.5px] font-bold text-white mt-4 mb-3">Sign up for free</div>
         <form className="flex flex-col sm:flex-row justify-center gap-2.5 max-w-[420px] mx-auto" onSubmit={(e) => e.preventDefault()}>
@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h5 className="text-[10.5px] font-bold tracking-[0.1em] uppercase text-[#8fd6ac] mb-3">ATTENDX</h5>
+            <h5 className="text-[10.5px] font-bold tracking-[0.1em] uppercase text-[#8fd6ac] mb-3">ATTENDEX</h5>
             <ul className="list-none flex flex-col gap-[9px]">
               <li><a href="#" className="text-[12px] text-[#d7e4dd] transition-colors duration-150 hover:text-white">About us</a></li>
               <li><a href="#" className="text-[12px] text-[#d7e4dd] transition-colors duration-150 hover:text-white">Careers</a></li>
@@ -59,8 +59,8 @@ export default function Footer() {
           </div>
 
           <div className="col-span-2 md:col-span-1">
-            <h5 className="text-[10.5px] font-bold tracking-[0.1em] uppercase text-[#8fd6ac] mb-3">Join the ATTENDX Club</h5>
-            <p className="text-xs text-[#c3d3c9] leading-[1.55] mb-3">Receive exclusive product tips and advice from ATTENDX. It's free!</p>
+            <h5 className="text-[10.5px] font-bold tracking-[0.1em] uppercase text-[#8fd6ac] mb-3">Join the ATTENDEX Club</h5>
+            <p className="text-xs text-[#c3d3c9] leading-[1.55] mb-3">Receive exclusive product tips and advice from ATTENDEX. It's free!</p>
             <form className="flex gap-2 mb-3" onSubmit={(e) => e.preventDefault()}>
               <input className="flex-1 min-w-0 bg-white/5 border border-white/20 rounded-full py-2.5 px-3.5 text-[12px] text-white outline-none placeholder:text-[#9fb3a8] focus:border-[#8fd6ac]" type="email" placeholder="E-mail" required />
               <button className="bg-[#b7f3c4] text-forest-950 font-bold text-xs py-2.5 px-4 rounded-full transition-all duration-150 hover:bg-[#9fe8b1]" type="submit">Go</button>
@@ -74,11 +74,11 @@ export default function Footer() {
         </div>
       </section>
 
-      <div className="font-baloo font-extrabold text-white text-center text-[clamp(2.4rem,10vw,7rem)] leading-[0.85] tracking-[-0.01em] py-2 px-5 pb-6 select-none uppercase">ATTENDX</div>
+      <div className="font-baloo font-extrabold text-white text-center text-[clamp(2.4rem,10vw,7rem)] leading-[0.85] tracking-[-0.01em] py-2 px-5 pb-6 select-none uppercase">ATTENDEX</div>
 
       <div className="border-t border-white/10 py-4 px-4 sm:px-6 flex flex-col sm:flex-row flex-wrap justify-between gap-3 max-w-[1180px] mx-auto">
         <div className="text-[10px] text-[#8fa79b]">
-          © 2026 ATTENDX. All rights reserved.
+          © 2026 ATTENDEX. All rights reserved.
         </div>
         <div className="flex flex-row gap-4 text-[10.5px]">
           <a href="#" className="text-[#d7e4dd] hover:text-white">Legal notices</a>

@@ -1,32 +1,32 @@
-// Shared icon components for the ATTENDX landing page
+// Shared icon components for the ATTENDEX landing page
 
 export const IconClock = (p: React.SVGProps<SVGSVGElement>) => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#133a2b" strokeWidth="2" strokeLinecap="round" {...p}>
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" {...p}>
     <circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 3" />
   </svg>
 );
 export const IconCalendar = (p: React.SVGProps<SVGSVGElement>) => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#133a2b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}>
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}>
     <rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" />
   </svg>
 );
 export const IconChart = (p: React.SVGProps<SVGSVGElement>) => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#133a2b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}>
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}>
     <path d="M3 3v18h18" /><path d="M7 15l4-6 3 3 5-8" />
   </svg>
 );
 export const IconCheck = (p: React.SVGProps<SVGSVGElement>) => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#133a2b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}>
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}>
     <path d="M9 11l3 3L22 4" /><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
   </svg>
 );
 export const IconArrow = (p: React.SVGProps<SVGSVGElement>) => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" {...p}>
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" {...p}>
     <path d="M7 17L17 7M9 7h8v8" />
   </svg>
 );
 export const IconTick = (p: React.SVGProps<SVGSVGElement>) => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1b4e3a" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" {...p}>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" {...p}>
     <path d="M20 6L9 17l-5-5" />
   </svg>
 );

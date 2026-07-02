@@ -2,7 +2,7 @@ import phonePng from "../../../assets/phone.png";
 
 export default function Hero() {
   return (
-    <header className="py-7 md:py-8 lg:pb-14">
+    <header className="py-7 md:py-8 lg:pb-14 min-h-[100svh] flex flex-col justify-center">
       <div className="max-w-[1180px] mx-auto px-[18px] md:px-6 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 items-center">
         <div className="flex flex-col justify-center order-1 lg:order-none">
           <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-forest-950 mb-6">
@@ -11,13 +11,13 @@ export default function Hero() {
             <span className="font-playfair italic font-normal text-forest-900">attendance</span>
           </h1>
           <p className="text-[#5c5c58] text-[14px] leading-[1.65] lg:max-w-[400px] mb-8">
-            From daily clock-ins, to planning for your future with better reporting, ATTENDX helps you get more from your workforce.
+            From daily clock-ins, to planning for your future with better reporting, ATTENDEX helps you get more from your workforce.
           </p>
           <div className="flex items-center gap-5 flex-wrap">
             <a href="#pricing" className="bg-forest-900 text-white py-3.5 px-7 rounded-full font-semibold text-[14px] transition-all duration-150 hover:bg-forest-800 hover:shadow-lg">Get Started Now</a>
             <div className="flex flex-col gap-0.5">
               <span className="text-amber text-[15px] tracking-[2px]">★★★★★ <span className="text-forest-950 font-bold ml-1 text-[13px]">5.0</span></span>
-              <span className="text-[11px] text-muted font-medium">from 120+ <span className="underline cursor-pointer decoration-muted-lt">reviews</span></span>
+              <span className="text-[11px] text-gray-600 font-medium">from 120+ <span className="underline cursor-pointer decoration-muted-lt">reviews</span></span>
             </div>
           </div>
         </div>
@@ -27,7 +27,7 @@ export default function Hero() {
           <div className="bg-[#e2e8e5] rounded-tl-[32px] rounded-tr-[4px] rounded-bl-[4px] rounded-br-[4px] flex flex-col items-center justify-center relative overflow-hidden h-[190px] lg:h-[230px]">
             <img
               src={phonePng}
-              alt="ATTENDX mobile app"
+              alt="ATTENDEX mobile app"
               className="absolute bottom-0 right-0 h-[140%] max-w-none w-auto object-contain drop-shadow-2xl"
               style={{ transform: "translateX(12%) translateY(18%) rotate(-6deg)" }}
             />

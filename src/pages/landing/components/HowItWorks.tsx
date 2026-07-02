@@ -8,12 +8,12 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-12 pb-14 border-t border-cdc-border">
+    <section className="py-12 pb-14">
       <div className="max-w-[1180px] mx-auto px-[18px] md:px-6">
         <div className="max-w-[600px] mx-auto mb-9 text-center">
           <span className="text-[10.5px] font-bold tracking-[0.12em] uppercase text-muted-lt block mb-2.5">HOW IT WORKS</span>
           <h2 className="text-[clamp(1.45rem,2.5vw,1.9rem)] font-semibold text-forest-900 tracking-[-0.01em] mb-2.5">Built around your team's rhythm</h2>
-          <p className="text-[12px] sm:text-[13px] text-muted leading-[1.65]">ATTENDX follows the rhythm your business already runs on, so records stay accurate without chasing paperwork.</p>
+          <p className="text-[12px] sm:text-[13px] text-600 leading-[1.65]">ATTENDEX follows the rhythm your business already runs on, so records stay accurate without chasing paperwork.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[18px]">
           {steps.map((s) => (
@@ -21,7 +21,7 @@ export default function HowItWorks() {
               <span className="text-[10px] font-bold tracking-[0.1em] text-muted-lt block mb-3.5">{s.label}</span>
               <div className="w-8 h-8 rounded-[10px] bg-mist flex items-center justify-center mb-4">{s.icon}</div>
               <h4 className="text-[14.5px] font-semibold text-forest-900 mb-[7px]">{s.title}</h4>
-              <p className="text-[11.5px] text-muted leading-[1.6]">{s.text}</p>
+              <p className="text-[11.5px] text-600 leading-[1.6]">{s.text}</p>
             </div>
           ))}
         </div>

@@ -13,7 +13,7 @@ export default function CTA() {
           {/* Text side */}
           <div className="flex-1 p-8 sm:p-12 pb-8 sm:pb-10 relative z-10">
             <h2 className="text-[clamp(1.6rem,3vw,2.2rem)] font-semibold leading-[1.2] mb-4">Change the way you<br />use your <span className="text-[#8fd6ac] font-playfair italic font-normal">pipeline</span></h2>
-            <p className="text-[12px] text-[#c3d3c9] leading-[1.7] mb-6 max-w-[380px]">Join over a million project leads and developers who choose ATTENDX for lightweight, lightning-fast platform monitoring.</p>
+            <p className="text-[12px] text-[#c3d3c9] leading-[1.7] mb-6 max-w-[380px]">Join over a million project leads and developers who choose ATTENDEX for lightweight, lightning-fast platform monitoring.</p>
             <a href="#pricing" className="inline-block bg-white text-forest-900 py-[13px] px-[22px] rounded-lg font-semibold text-[12.5px] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(0,0,0,0.15)]">Get Started Now</a>
           </div>
 
@@ -23,14 +23,14 @@ export default function CTA() {
             {/* Mobile: normal in-flow image, centred */}
             <img
               src={phonePng}
-              alt="ATTENDX mobile app"
+              alt="ATTENDEX mobile app"
               className="block md:hidden h-[200px] w-auto object-contain mx-auto"
               style={{ filter: "drop-shadow(0 20px 32px rgba(0,0,0,0.5))" }}
             />
             {/* Desktop: absolute, floats out of card top */}
             <img
               src={phonePng}
-              alt="ATTENDX mobile app"
+              alt="ATTENDEX mobile app"
               className="hidden md:block object-contain transition-transform duration-500 hover:-translate-y-4"
               style={{
                 position: "absolute",

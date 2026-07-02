@@ -11,7 +11,7 @@ import Stats from "./landing/components/Stats";
 import FAQ from "./landing/components/FAQ";
 import CTA from "./landing/components/CTA";
 import Footer from "./landing/components/Footer";
-import SmoothScroll from "./landing/components/SmoothScroll";
+
 
 export default function TaskManagementLanding() {
   const rootRef = useScrollReveal(
@@ -22,21 +22,32 @@ export default function TaskManagementLanding() {
   return (
     <div className="box-border m-0 p-0 font-inter text-ink bg-white antialiased overflow-x-hidden" ref={rootRef}>
       <Navbar />
-      <SmoothScroll>
+      
         <div className="pt-[76px]">
           <Hero />       
-        <About />
-        <HowItWorks />
-        <TimerShowcase />
-        <SplitSection />
-        <Benefits />
-        <Pricing />
-        <Stats />
-        <FAQ />
-        <CTA />
-        <Footer />
+          
+          <div className="min-h-[100svh] flex flex-col justify-center">
+            <About />
+            <HowItWorks />
+          </div>
+
+          <div className="min-h-[100svh] flex flex-col justify-center">
+            <TimerShowcase />
+            <SplitSection />
+          </div>
+
+          <Benefits />
+          <Pricing />
+          
+          <div className="min-h-[100svh] flex flex-col justify-center">
+            <Stats />
+            <FAQ />
+            <CTA />
+          </div>
+
+          <Footer />
         </div>
-      </SmoothScroll>
+      
     </div>
   );
 }
