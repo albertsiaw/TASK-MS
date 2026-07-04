@@ -53,7 +53,7 @@ export default function ContactSection({ open, onClose }: ContactSectionProps) {
 
   return (
     <div
-      className="fixed inset-0 z-[300] flex items-center justify-center p-4"
+      className="fixed inset-0 z-[300] flex items-center justify-center p-3 sm:p-4"
       role="dialog"
       aria-modal="true"
       aria-label="Contact sales modal"
@@ -65,10 +65,10 @@ export default function ContactSection({ open, onClose }: ContactSectionProps) {
       />
 
       {/* Modal Card */}
-      <div className="relative z-10 w-full max-w-[780px] max-h-[90vh] bg-white rounded-3xl shadow-[0_32px_80px_rgba(0,0,0,0.22)] overflow-hidden animate-modal-in">
+      <div className="relative z-10 w-full max-w-[780px] max-h-[95vh] bg-white rounded-2xl sm:rounded-3xl shadow-[0_32px_80px_rgba(0,0,0,0.22)] overflow-hidden animate-modal-in">
         {/* Close button */}
         <button
-          className="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors z-20"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors z-20"
           onClick={onClose}
           aria-label="Close"
         >
@@ -80,18 +80,18 @@ export default function ContactSection({ open, onClose }: ContactSectionProps) {
         <div>
           {submitted ? (
             /* Success State */
-            <div className="flex flex-col items-center justify-center py-16 px-8 text-center">
-              <div className="w-16 h-16 rounded-full bg-[#e8f5ee] flex items-center justify-center mb-5">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1b4e3a" strokeWidth="2.5" strokeLinecap="round">
+            <div className="flex flex-col items-center justify-center py-10 sm:py-16 px-6 sm:px-8 text-center">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#e8f5ee] flex items-center justify-center mb-4 sm:mb-5">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1b4e3a" strokeWidth="2.5" strokeLinecap="round">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
               </div>
-              <h3 className="text-[1.5rem] font-bold text-forest-950 mb-2">Message Sent!</h3>
-              <p className="text-[14px] text-gray-500 max-w-[340px] leading-[1.6]">
+              <h3 className="text-[1.3rem] sm:text-[1.5rem] font-bold text-forest-950 mb-2">Message Sent!</h3>
+              <p className="text-[13.5px] sm:text-[14px] text-gray-500 max-w-[340px] leading-[1.6]">
                 Thank you for reaching out. Our team will get back to you within 1 business day to discuss your custom plan.
               </p>
               <button
-                className="mt-8 bg-forest-900 text-white font-semibold text-[14px] py-3 px-8 rounded-xl hover:bg-forest-700 transition-colors"
+                className="mt-6 sm:mt-8 bg-forest-900 text-white font-semibold text-[14px] py-3 px-8 rounded-xl hover:bg-forest-700 transition-colors"
                 onClick={onClose}
               >
                 Close
@@ -99,8 +99,8 @@ export default function ContactSection({ open, onClose }: ContactSectionProps) {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-[1fr_1.6fr]">
-              {/* Left info panel */}
-              <div className="bg-forest-900 text-white p-8 flex flex-col justify-between">
+              {/* Left info panel — hidden on mobile, shown from md breakpoint up */}
+              <div className="hidden md:flex bg-forest-900 text-white p-8 flex-col justify-between">
                 <div>
                   <span className="text-[18px] font-extrabold tracking-[-0.02em] uppercase">ATTENDEX</span>
                   <div className="mt-8">
@@ -139,16 +139,19 @@ export default function ContactSection({ open, onClose }: ContactSectionProps) {
                 </div>
               </div>
 
-              {/* Right form panel */}
-              <div className="p-8">
-                <h3 className="text-[1.25rem] font-bold text-forest-950 mb-1">Get in touch</h3>
-                <p className="text-[13px] text-gray-500 mb-6">Tell us about your team and we'll get back to you within 24 hours.</p>
+              {/* Right form panel — full width on mobile */}
+              <div className="p-5 sm:p-8">
+                {/* Logo shown only on mobile since left panel is hidden */}
+                <span className="md:hidden block text-[15px] font-extrabold tracking-[-0.02em] text-forest-900 uppercase mb-2.5">ATTENDEX</span>
 
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <h3 className="text-[1rem] sm:text-[1.25rem] font-bold text-forest-950 mb-0.5 sm:mb-1">Get in touch</h3>
+                <p className="text-[11.5px] sm:text-[13px] text-gray-500 mb-3 sm:mb-6">Tell us about your team and we'll get back to you within 24 hours.</p>
+
+                <form onSubmit={handleSubmit} className="flex flex-col gap-2.5 sm:gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-4">
                     {/* Full Name */}
-                    <div className="flex flex-col gap-1.5">
-                      <label htmlFor="contact-fullName" className="text-[12px] font-semibold text-forest-900">Full Name *</label>
+                    <div className="flex flex-col gap-1 sm:gap-1.5">
+                      <label htmlFor="contact-fullName" className="text-[11px] sm:text-[12px] font-semibold text-forest-900">Full Name *</label>
                       <input
                         id="contact-fullName"
                         name="fullName"
@@ -157,13 +160,13 @@ export default function ContactSection({ open, onClose }: ContactSectionProps) {
                         required
                         value={form.fullName}
                         onChange={handleChange}
-                        className="w-full border border-[#e0e0dc] rounded-xl px-3.5 py-2.5 text-[13px] text-forest-950 bg-[#fafafa] outline-none focus:border-forest-700 focus:ring-2 focus:ring-forest-100 transition-all placeholder:text-gray-400"
+                        className="w-full border border-[#e0e0dc] rounded-xl px-3 py-2 sm:px-3.5 sm:py-2.5 text-[12.5px] sm:text-[13px] text-forest-950 bg-[#fafafa] outline-none focus:border-forest-700 focus:ring-2 focus:ring-forest-100 transition-all placeholder:text-gray-400"
                       />
                     </div>
 
                     {/* Company Name */}
-                    <div className="flex flex-col gap-1.5">
-                      <label htmlFor="contact-companyName" className="text-[12px] font-semibold text-forest-900">Company Name *</label>
+                    <div className="flex flex-col gap-1 sm:gap-1.5">
+                      <label htmlFor="contact-companyName" className="text-[11px] sm:text-[12px] font-semibold text-forest-900">Company Name *</label>
                       <input
                         id="contact-companyName"
                         name="companyName"
@@ -172,30 +175,32 @@ export default function ContactSection({ open, onClose }: ContactSectionProps) {
                         required
                         value={form.companyName}
                         onChange={handleChange}
-                        className="w-full border border-[#e0e0dc] rounded-xl px-3.5 py-2.5 text-[13px] text-forest-950 bg-[#fafafa] outline-none focus:border-forest-700 focus:ring-2 focus:ring-forest-100 transition-all placeholder:text-gray-400"
+                        className="w-full border border-[#e0e0dc] rounded-xl px-3 py-2 sm:px-3.5 sm:py-2.5 text-[12.5px] sm:text-[13px] text-forest-950 bg-[#fafafa] outline-none focus:border-forest-700 focus:ring-2 focus:ring-forest-100 transition-all placeholder:text-gray-400"
                       />
                     </div>
                   </div>
 
-                  {/* Work Email */}
-                  <div className="flex flex-col gap-1.5">
-                    <label htmlFor="contact-email" className="text-[12px] font-semibold text-forest-900">Work Email *</label>
-                    <input
-                      id="contact-email"
-                      name="email"
-                      type="email"
-                      placeholder="you@company.com"
-                      required
-                      value={form.email}
-                      onChange={handleChange}
-                      className="w-full border border-[#e0e0dc] rounded-xl px-3.5 py-2.5 text-[13px] text-forest-950 bg-[#fafafa] outline-none focus:border-forest-700 focus:ring-2 focus:ring-forest-100 transition-all placeholder:text-gray-400"
-                    />
+                  {/* Work Email + Phone side by side on mobile to save vertical space */}
+                  <div className="grid grid-cols-1 sm:grid-cols-1 gap-2.5 sm:gap-4">
+                    <div className="flex flex-col gap-1 sm:gap-1.5">
+                      <label htmlFor="contact-email" className="text-[11px] sm:text-[12px] font-semibold text-forest-900">Work Email *</label>
+                      <input
+                        id="contact-email"
+                        name="email"
+                        type="email"
+                        placeholder="you@company.com"
+                        required
+                        value={form.email}
+                        onChange={handleChange}
+                        className="w-full border border-[#e0e0dc] rounded-xl px-3 py-2 sm:px-3.5 sm:py-2.5 text-[12.5px] sm:text-[13px] text-forest-950 bg-[#fafafa] outline-none focus:border-forest-700 focus:ring-2 focus:ring-forest-100 transition-all placeholder:text-gray-400"
+                      />
+                    </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-4">
                     {/* Phone */}
-                    <div className="flex flex-col gap-1.5">
-                      <label htmlFor="contact-phone" className="text-[12px] font-semibold text-forest-900">Phone <span className="text-gray-400 font-normal">(optional)</span></label>
+                    <div className="flex flex-col gap-1 sm:gap-1.5">
+                      <label htmlFor="contact-phone" className="text-[11px] sm:text-[12px] font-semibold text-forest-900">Phone <span className="text-gray-400 font-normal">(optional)</span></label>
                       <input
                         id="contact-phone"
                         name="phone"
@@ -203,20 +208,20 @@ export default function ContactSection({ open, onClose }: ContactSectionProps) {
                         placeholder="+1 555 000 0000"
                         value={form.phone}
                         onChange={handleChange}
-                        className="w-full border border-[#e0e0dc] rounded-xl px-3.5 py-2.5 text-[13px] text-forest-950 bg-[#fafafa] outline-none focus:border-forest-700 focus:ring-2 focus:ring-forest-100 transition-all placeholder:text-gray-400"
+                        className="w-full border border-[#e0e0dc] rounded-xl px-3 py-2 sm:px-3.5 sm:py-2.5 text-[12.5px] sm:text-[13px] text-forest-950 bg-[#fafafa] outline-none focus:border-forest-700 focus:ring-2 focus:ring-forest-100 transition-all placeholder:text-gray-400"
                       />
                     </div>
 
                     {/* Team Size */}
-                    <div className="flex flex-col gap-1.5">
-                      <label htmlFor="contact-teamSize" className="text-[12px] font-semibold text-forest-900">Team Size *</label>
+                    <div className="flex flex-col gap-1 sm:gap-1.5">
+                      <label htmlFor="contact-teamSize" className="text-[11px] sm:text-[12px] font-semibold text-forest-900">Team Size *</label>
                       <select
                         id="contact-teamSize"
                         name="teamSize"
                         required
                         value={form.teamSize}
                         onChange={handleChange}
-                        className="w-full border border-[#e0e0dc] rounded-xl px-3.5 py-2.5 text-[13px] text-forest-950 bg-[#fafafa] outline-none focus:border-forest-700 focus:ring-2 focus:ring-forest-100 transition-all appearance-none cursor-pointer"
+                        className="w-full border border-[#e0e0dc] rounded-xl px-3 py-2 sm:px-3.5 sm:py-2.5 text-[12.5px] sm:text-[13px] text-forest-950 bg-[#fafafa] outline-none focus:border-forest-700 focus:ring-2 focus:ring-forest-100 transition-all appearance-none cursor-pointer"
                       >
                         <option value="" disabled>Select size</option>
                         <option value="50-100">50 – 100 employees</option>
@@ -227,24 +232,24 @@ export default function ContactSection({ open, onClose }: ContactSectionProps) {
                     </div>
                   </div>
 
-                  {/* Message */}
-                  <div className="flex flex-col gap-1.5">
-                    <label htmlFor="contact-message" className="text-[12px] font-semibold text-forest-900">Message <span className="text-gray-400 font-normal">(optional)</span></label>
+                  {/* Message — fewer rows on mobile */}
+                  <div className="flex flex-col gap-1 sm:gap-1.5">
+                    <label htmlFor="contact-message" className="text-[11px] sm:text-[12px] font-semibold text-forest-900">Message <span className="text-gray-400 font-normal">(optional)</span></label>
                     <textarea
                       id="contact-message"
                       name="message"
-                      rows={3}
+                      rows={2}
                       placeholder="Tell us about your use case or any specific requirements…"
                       value={form.message}
                       onChange={handleChange}
-                      className="w-full border border-[#e0e0dc] rounded-xl px-3.5 py-2.5 text-[13px] text-forest-950 bg-[#fafafa] outline-none focus:border-forest-700 focus:ring-2 focus:ring-forest-100 transition-all placeholder:text-gray-400 resize-none"
+                      className="w-full border border-[#e0e0dc] rounded-xl px-3 py-2 sm:px-3.5 sm:py-2.5 text-[12.5px] sm:text-[13px] text-forest-950 bg-[#fafafa] outline-none focus:border-forest-700 focus:ring-2 focus:ring-forest-100 transition-all placeholder:text-gray-400 resize-none sm:rows-3"
                     />
                   </div>
 
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-forest-900 hover:bg-forest-700 text-white font-semibold text-[14px] py-3 rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed mt-1"
+                    className="w-full bg-forest-900 hover:bg-forest-700 text-white font-semibold text-[13px] sm:text-[14px] py-2.5 sm:py-3 rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed mt-0.5 sm:mt-1"
                   >
                     {loading ? (
                       <span className="flex items-center justify-center gap-2">
@@ -259,7 +264,7 @@ export default function ContactSection({ open, onClose }: ContactSectionProps) {
                     )}
                   </button>
 
-                  <p className="text-center text-[11px] text-gray-400">
+                  <p className="text-center text-[10px] sm:text-[11px] text-gray-400">
                     By submitting, you agree to our{" "}
                     <a href="#" className="text-forest-700 hover:underline">Privacy Policy</a>.
                   </p>
