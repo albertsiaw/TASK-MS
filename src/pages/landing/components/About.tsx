@@ -2,7 +2,7 @@ import Teamwork from "../../../assets/Teamwork.png";
 
 export default function About() {
   return (
-    <section className="py-10">
+    <section className="py-10" id="about">
       <div className="max-w-[1180px] mx-auto px-[18px] md:px-6 grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-8 lg:gap-16 items-center">
         <div className="flex flex-col justify-center">
           <span className="text-[10.5px] font-bold tracking-[0.12em] uppercase text-muted-lt block mb-2.5">ABOUT ATTENDEX</span>
@@ -11,10 +11,11 @@ export default function About() {
         </div>
         <div className="flex justify-center">
           <img
-            src={Teamwork}
-            alt="Teams collaborating with ATTENDEX"
-            className="w-full max-w-[500px] object-contain drop-shadow-lg"
-          />
+             src={Teamwork}
+             alt="Teams collaborating with ATTENDEX"
+             className="w-full max-w-[500px] object-contain drop-shadow-lg"
+             style={{ imageRendering: "-webkit-optimize-contrast" }}
+         />
         </div>
       </div>
     </section>

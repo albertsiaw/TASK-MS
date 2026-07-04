@@ -2,12 +2,16 @@ import pcImagePng from "../../../assets/pc-image.png";
 
 export default function SplitSection() {
   return (
-    <section className="pb-16">
+    <section className="pb-16" id="task-assignment">
       <div className="max-w-[1180px] mx-auto px-[18px] md:px-6 grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-5">
         {/* Left card: Attendance chart */}
         <div className="rounded-[22px] p-7 min-h-[300px] flex flex-col justify-between bg-forest-900 text-white overflow-hidden relative group">
           <div className="absolute -right-12 -bottom-10 opacity-30 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none">
-            <img src={pcImagePng} alt="" className="w-[280px] md:w-[320px] object-contain drop-shadow-lg transform rotate-[-5deg]" />
+           <img 
+                src={pcImagePng} 
+                alt="" 
+                className="w-[280px] md:w-[320px] object-contain drop-shadow-lg rotate-[-5deg] [backface-visibility:hidden] [transform:translateZ(0)]" 
+            />
           </div>
           <div className="relative z-10">
             <h3 className="text-[1.15rem] font-semibold mb-2">Track attendance the easy way</h3>

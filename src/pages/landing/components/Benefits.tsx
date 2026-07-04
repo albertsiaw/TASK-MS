@@ -10,7 +10,7 @@ const cards = [
 export default function Benefits() {
   return (
     <>
-      <section className="py-10 pb-16">
+      <section className="py-10 pb-16" id="benefits">
         <div className="max-w-[1180px] mx-auto px-[18px] md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-3.5 lg:gap-6 mb-[30px] items-center">
             <div>
@@ -71,10 +71,11 @@ export default function Benefits() {
           </div>
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
             <img
-              src={dashboardDesignPng}
-              alt="ATTENDEX Dashboard UI"
-              className="w-full max-w-[800px] h-auto object-contain"
-            />
+               src={dashboardDesignPng}
+               alt="ATTENDEX Dashboard UI"
+               className="w-full max-w-[800px] h-auto object-contain"
+               style={{ imageRendering: "-webkit-optimize-contrast" }}
+/>
           </div>
         </div>
       </section>

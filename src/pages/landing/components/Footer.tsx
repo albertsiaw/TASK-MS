@@ -51,9 +51,9 @@ export default function Footer() {
           <div>
             <h5 className="text-[10.5px] font-bold tracking-[0.1em] uppercase text-[#8fd6ac] mb-3">ATTENDEX</h5>
             <ul className="list-none flex flex-col gap-[9px]">
-              <li><a href="#" className="text-[12px] text-[#d7e4dd] transition-colors duration-150 hover:text-white">About us</a></li>
+              <li><a href="#about" className="text-[12px] text-[#d7e4dd] transition-colors duration-150 hover:text-white">About us</a></li>
               <li><a href="#" className="text-[12px] text-[#d7e4dd] transition-colors duration-150 hover:text-white">Careers</a></li>
-              <li><a href="#" className="text-[12px] text-[#d7e4dd] transition-colors duration-150 hover:text-white">Contact us</a></li>
+              <li><a href="#contact" className="text-[12px] text-[#d7e4dd] transition-colors duration-150 hover:text-white">Contact us</a></li>
               <li><a href="#" className="text-[12px] text-[#d7e4dd] transition-colors duration-150 hover:text-white">Our blog</a></li>
             </ul>
           </div>

@@ -11,7 +11,8 @@ export default function TimerShowcase() {
             <img
               src={timerAppPng}
               alt="ATTENDEX time management"
-              className="relative w-full max-w-[360px] object-contain drop-shadow-xl"
+               className="w-full max-w-[400px] object-contain drop-shadow-lg"
+               style={{ imageRendering: "-webkit-optimize-contrast" }}
             />
           </div>
         </div>

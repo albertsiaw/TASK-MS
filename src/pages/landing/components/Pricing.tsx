@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IconTick } from "./icons";
-
+import SignupModal from "./SignupModal";
+import ContactSection from "./ContactSection";
 
 
 const PLANS = [
@@ -11,6 +12,7 @@ const PLANS = [
     desc: "For small teams getting off spreadsheets.",
     cta: "Start free trial",
     featured: false,
+    isCustom: false,
     features: [
       "Up to 25 employees",
       "Daily clock-in / clock-out",
@@ -25,6 +27,7 @@ const PLANS = [
     desc: "For growing teams that need tasks and reporting.",
     cta: "Get Started Now",
     featured: true,
+    isCustom: false,
     features: [
       "Unlimited employees",
       "Everything in Starter",
@@ -40,6 +43,7 @@ const PLANS = [
     desc: "For multi-location or franchise operations.",
     cta: "Contact Sales",
     featured: false,
+    isCustom: true,
     features: [
       "Everything in Team",
       "HR system integrations",
@@ -51,8 +55,24 @@ const PLANS = [
 
 type Plan = typeof PLANS[number];
 
-function PlanCard({ plan, yearly }: { plan: Plan; yearly: boolean }) {
+interface PlanCardProps {
+  plan: Plan;
+  yearly: boolean;
+  onSignup: (planName: string) => void;
+  onContact: () => void;
+}
+
+function PlanCard({ plan, yearly, onSignup, onContact }: PlanCardProps) {
   const price = yearly ? plan.yearly : plan.monthly;
+
+  const handleCta = () => {
+    if (plan.isCustom) {
+      onContact();
+    } else {
+      onSignup(plan.name);
+    }
+  };
+
   return (
     <div className={`rounded-3xl p-7 lg:p-9 flex flex-col transition-all duration-300 relative group overflow-hidden ${
       plan.featured 
@@ -80,11 +100,16 @@ function PlanCard({ plan, yearly }: { plan: Plan; yearly: boolean }) {
         )}
       </div>
       
-      <a href="/login" className={`text-center py-3.5 px-4 rounded-xl font-semibold text-[14px] mb-8 transition-all duration-200 ${
-        plan.featured 
-        ? "bg-[#8fd6ac] text-forest-950 hover:bg-[#a6e2bf] shadow-[0_4px_14px_rgba(143,214,172,0.3)] hover:-translate-y-0.5" 
-        : "bg-mist text-forest-900 hover:bg-[#e2e8e5] border border-[#d3d9d6]"
-      }`}>{plan.cta}</a>
+      <button
+        onClick={handleCta}
+        className={`text-center py-3.5 px-4 rounded-xl font-semibold text-[14px] mb-8 transition-all duration-200 cursor-pointer ${
+          plan.featured 
+          ? "bg-[#8fd6ac] text-forest-950 hover:bg-[#a6e2bf] shadow-[0_4px_14px_rgba(143,214,172,0.3)] hover:-translate-y-0.5" 
+          : "bg-mist text-forest-900 hover:bg-[#e2e8e5] border border-[#d3d9d6] hover:-translate-y-0.5"
+        }`}
+      >
+        {plan.cta}
+      </button>
       
       <div className="mt-auto">
         <span className={`text-[11px] font-bold tracking-[0.08em] uppercase mb-4 block ${plan.featured ? "text-white/50" : "text-muted-lt"}`}>What's included</span>
@@ -103,42 +128,74 @@ function PlanCard({ plan, yearly }: { plan: Plan; yearly: boolean }) {
 
 export default function Pricing() {
   const [yearly, setYearly] = useState(true);
+  const [signupOpen, setSignupOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState("");
+
+  const handleSignup = (planName: string) => {
+    setSelectedPlan(planName);
+    setSignupOpen(true);
+  };
+
+  const handleContact = () => {
+    setContactOpen(true);
+  };
+
   return (
-    <section className="py-20 lg:py-28 bg-[#f9faf9] min-h-[100svh] flex flex-col justify-center" id="pricing">
-      <div className="max-w-[1180px] mx-auto px-[18px] md:px-6">
-        <div className="max-w-[600px] mx-auto mb-14 text-center">
-          <h2 className="text-[clamp(1.8rem,3vw,2.4rem)] font-semibold text-forest-950 tracking-[-0.02em] mb-4">Simple plans that scale with your team</h2>
-          <p className="text-[14px] sm:text-[15px] text-gray-600 leading-[1.65]">Start free for 14 days. No credit card required, cancel anytime.</p>
-          <div className="relative inline-grid grid-cols-2 bg-white border border-[#eaeaea] rounded-full p-1.5 mt-8 shadow-sm">
-            
-            <span
-              className="absolute inset-1.5 w-[calc(50%-3px)] rounded-full bg-forest-900 shadow-md transition-transform duration-300 ease-in-out"
-              style={{ transform: yearly ? 'translateX(calc(100% + 6px))' : 'translateX(0)' }}
-            />
-            <button
-              className={`relative z-10 text-[13px] font-semibold py-2.5 px-6 rounded-full transition-colors duration-300 text-center ${!yearly ? "text-white" : "text-gray-500 hover:text-forest-900"}`}
-              onClick={() => setYearly(false)}
-            >
-              Monthly
-            </button>
-            <button
-              className={`relative z-10 text-[13px] font-semibold py-2.5 px-6 rounded-full transition-colors duration-300 inline-flex items-center justify-center gap-2 ${yearly ? "text-white" : "text-gray-500 hover:text-forest-900"}`}
-              onClick={() => setYearly(true)}
-            >
-              Yearly
-              <span className={`text-[10px] font-bold py-0.5 px-2 rounded-full transition-colors duration-300 ${yearly ? "bg-white/20 text-white" : "bg-green-100 text-green-700"}`}>
-                Save 20%
-              </span>
-            </button>
+    <>
+      <section className="py-20 lg:py-28 bg-[#f9faf9] min-h-[100svh] flex flex-col justify-center" id="pricing">
+        <div className="max-w-[1180px] mx-auto px-[18px] md:px-6">
+          <div className="max-w-[600px] mx-auto mb-14 text-center">
+            <h2 className="text-[clamp(1.8rem,3vw,2.4rem)] font-semibold text-forest-950 tracking-[-0.02em] mb-4">Simple plans that scale with your team</h2>
+            <p className="text-[14px] sm:text-[15px] text-gray-600 leading-[1.65]">Start free for 14 days. No credit card required, cancel anytime.</p>
+            <div className="relative inline-grid grid-cols-2 bg-white border border-[#eaeaea] rounded-full p-1.5 mt-8 shadow-sm">
+              
+              <span
+                className="absolute inset-1.5 w-[calc(50%-3px)] rounded-full bg-forest-900 shadow-md transition-transform duration-300 ease-in-out"
+                style={{ transform: yearly ? 'translateX(calc(100% + 6px))' : 'translateX(0)' }}
+              />
+              <button
+                className={`relative z-10 text-[13px] font-semibold py-2.5 px-6 rounded-full transition-colors duration-300 text-center ${!yearly ? "text-white" : "text-gray-500 hover:text-forest-900"}`}
+                onClick={() => setYearly(false)}
+              >
+                Monthly
+              </button>
+              <button
+                className={`relative z-10 text-[13px] font-semibold py-2.5 px-6 rounded-full transition-colors duration-300 inline-flex items-center justify-center gap-2 ${yearly ? "text-white" : "text-gray-500 hover:text-forest-900"}`}
+                onClick={() => setYearly(true)}
+              >
+                Yearly
+                <span className={`text-[10px] font-bold py-0.5 px-2 rounded-full transition-colors duration-300 ${yearly ? "bg-white/20 text-white" : "bg-green-100 text-green-700"}`}>
+                  Save 20%
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch max-w-[1000px] mx-auto">
+            {PLANS.map((plan) => (
+              <PlanCard
+                plan={plan}
+                yearly={yearly}
+                key={plan.name}
+                onSignup={handleSignup}
+                onContact={handleContact}
+              />
+            ))}
           </div>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch max-w-[1000px] mx-auto">
-          {PLANS.map((plan) => (
-            <PlanCard plan={plan} yearly={yearly} key={plan.name} />
-          ))}
-        </div>
-      </div>
-    </section>
+      <SignupModal
+        open={signupOpen}
+        onClose={() => setSignupOpen(false)}
+        planName={selectedPlan}
+      />
+
+      <ContactSection
+        open={contactOpen}
+        onClose={() => setContactOpen(false)}
+      />
+    </>
   );
 }

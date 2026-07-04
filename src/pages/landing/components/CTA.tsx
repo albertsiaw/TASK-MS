@@ -40,6 +40,7 @@ export default function CTA() {
                 height: "140%",
                 maxHeight: 420,
                 filter: "drop-shadow(0 32px 48px rgba(0,0,0,0.55))"
+                
               }}
             />
           </div>
