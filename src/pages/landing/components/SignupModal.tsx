@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import dashboardImg from "../../../assets/download-graph.jpg";
+
 
 interface SignupModalProps {
   open: boolean;
@@ -73,13 +73,8 @@ export default function SignupModal({ open, onClose, planName }: SignupModalProp
 
         {/* Image side — hidden on mobile */}
         <div className="hidden md:flex md:w-[42%] relative flex-shrink-0 overflow-hidden">
-          <img
-            src={dashboardImg}
-            alt="ATTENDEX dashboard"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
           {/* Overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-forest-950/80 to-forest-900/50" />
+          <div className="absolute inset-0 bg-gradient-to-br from-forest-950 to-forest-900" />
           {/* Content over image */}
           <div className="relative z-10 flex flex-col justify-between p-8 text-white w-full">
             <span className="text-[18px] font-extrabold tracking-[-0.02em] uppercase">ATTENDEX</span>

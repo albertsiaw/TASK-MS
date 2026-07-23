@@ -1,6 +1,5 @@
 
 import { LoginForm } from "@/components/login-form"
-import Success from "../assets/Success-bg.jpg"
 import { Link } from "@tanstack/react-router"
 export default function LoginPage() {
   return (
@@ -17,12 +16,32 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
-      <div className="relative hidden bg-[#e2e8e5] lg:block">
-        <img
-          src={Success}
-          alt="ATTENDEX Teamwork"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+      <div className="relative hidden flex-col items-center justify-center gap-6 bg-forest-900 p-12 text-center lg:flex">
+        <h1 className="text-4xl font-bold text-white">Welcome to ATTENDEX</h1>
+        <p className="text-lg text-white/90">Your ultimate attendance management solution</p>
+        <div className="mt-4 space-y-4 text-left">
+          <div className="flex items-start gap-3">
+            <span className="mt-1 text-emerald-400">✓</span>
+            <div>
+              <h3 className="font-semibold text-white">Real-Time Tracking</h3>
+              <p className="text-sm text-white/70">Monitor attendance as it happens with live updates and instant notifications.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="mt-1 text-emerald-400">✓</span>
+            <div>
+              <h3 className="font-semibold text-white">Smart Reports</h3>
+              <p className="text-sm text-white/70">Generate detailed attendance reports with just a few clicks.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="mt-1 text-emerald-400">✓</span>
+            <div>
+              <h3 className="font-semibold text-white">Seamless Integration</h3>
+              <p className="text-sm text-white/70">Works with your existing systems for a smooth transition.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
